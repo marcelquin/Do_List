@@ -1,0 +1,12 @@
+package baseAPI.API.Sistema.Enum;
+
+public enum AcaoBackup {
+
+    ATIVIDADE_CRIADA,
+    DEV_ATRIBUIDO,
+    ATIVIDADE_MOVIMENTACAO,
+    ATIVIDADE_ALTERACAO,
+    ATIVIDADE_FINALIZADA,
+    DEV_CRIADO,
+    DEV_ALTERACAO;
+}
