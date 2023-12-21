@@ -18,10 +18,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("lista")
+@RequestMapping("tarefas")
 @Slf4j
 @RequiredArgsConstructor
-@Tag(name = "lista", description = "Manipula dados de lista de atividades")
+@Tag(name = "tarefas", description = "Manipula dados de lista de atividades")
 public class AtividadeController {
 
     @Autowired

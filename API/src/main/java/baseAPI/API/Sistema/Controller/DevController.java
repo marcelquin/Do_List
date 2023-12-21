@@ -19,7 +19,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("dev")
-@Slf4j
 @RequiredArgsConstructor
 @Tag(name = "dev", description = "Manipula dados de lista da entidade Dev")
 public class DevController {

@@ -22,6 +22,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.springframework.http.HttpStatus.CREATED;
@@ -71,7 +72,6 @@ public class DevService {
         return null;
     }
 
-    //recort to campos string
     public ResponseEntity<DevRecord> NovoDev(String nome, Nivel nivel, Equipe equipe)
     {
         try{
@@ -86,6 +86,7 @@ public class DevService {
                 backupDev.setAcaoBackup(AcaoBackup.DEV_CRIADO);
                 backupDev.setEquipe(equipe);
                 backupDev.setNivel(nivel);
+                backupDev.setTimeStamp(LocalDateTime.now());
                 backupDevRepository.save(backupDev);
                 return new ResponseEntity<>(CREATED);
             }
@@ -100,7 +101,6 @@ public class DevService {
         return null;
     }
 
-    //recort to campos string
     public ResponseEntity<DevRecord> AlterarDev(Long id, String nome, Nivel nivel, Equipe equipe)
     {
         try{
@@ -118,6 +118,7 @@ public class DevService {
                   backupDev.setAcaoBackup(AcaoBackup.DEV_ALTERACAO);
                   backupDev.setEquipe(equipe);
                   backupDev.setNivel(nivel);
+                  backupDev.setTimeStamp(LocalDateTime.now());
                   backupDevRepository.save(backupDev);
                   return new ResponseEntity<>(OK);
               }
@@ -148,6 +149,7 @@ public class DevService {
                 backupDev.setNome(dev.getNome());
                 backupDev.setNivel(dev.getNivel());
                 backupDev.setEquipe(equipe);
+                backupDev.setTimeStamp(LocalDateTime.now());
                 backupDevRepository.save(backupDev);
                 return new ResponseEntity<>(OK);
             }
@@ -175,6 +177,7 @@ public class DevService {
                 backupDev.setNome(dev.getNome());
                 backupDev.setNivel(nivel);
                 backupDev.setEquipe(dev.getEquipe());
+                backupDev.setTimeStamp(LocalDateTime.now());
                 backupDevRepository.save(backupDev);
                 return new ResponseEntity<>(OK);
             }
